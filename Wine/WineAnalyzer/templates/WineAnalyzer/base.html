@@ -4,20 +4,21 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
-	<link type="text/css" href="{% static 'WineAnalyzer/css/styles.css' %}" rel="stylesheet">
+	{% block style_link %}<link type="text/css" href="{% static 'WineAnalyzer/css/styles.css' %}" rel="stylesheet">{% endblock %}
 </head>
 <body>
     <div class="container">
         <div class="header">
         <a class="logo" href="/" >Winederful!</a>
           <div class="header-right">
-            <a class="active" href="#home">Home</a>
+            <a class="active" href="/analyzer">Check your wine</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
           </div>
         </div>
     <main>
         {% block content %}{% endblock %}
+        {% block script_link %}{% endblock %}
     </main>
     <footer>
         <p>2023 Winederful!</p>
