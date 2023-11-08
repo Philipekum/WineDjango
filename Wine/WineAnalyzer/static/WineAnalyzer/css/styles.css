@@ -12,7 +12,7 @@ main {
     flex: 1;
     background: #f1f1f1;
     width: 50%;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .header {
@@ -30,10 +30,6 @@ main {
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
-}
-
-.logo-svg {
-  width: 60px;
 }
 
 .header a.logo {
