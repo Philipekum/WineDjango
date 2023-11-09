@@ -11,60 +11,17 @@
 
 {% block content %}
 
-<form id="regForm" action="">
-
 <h1>Enter data:</h1>
-
-<div class="tab">Enter acids:
-  {% for el in acids %}
-    <p><input type="number" placeholder="{{el}}" oninput="this.className = ''"></p>
-  {% endfor %}
-</div>
-
-<div class="tab">Enter sugar and chlorides:
-  {% for el in sugar_chlorides %}
-    <p><input type="number" placeholder="{{el}}" oninput="this.className = ''"></p>
-  {% endfor %}
-</div>
-
-<div class="tab">Enter sulfur dioxides:
-    {% for el in sulfur_dioxides %}
-      <p><input type="number" placeholder="{{el}}" oninput="this.className = ''"></p>
-    {% endfor %}
-</div>
-
-<div class="tab">Enter remaining elements:
-    {% for el in others %}
-      <p><input type="number" placeholder="{{el}}" oninput="this.className = ''"></p>
-    {% endfor %}
-</div>
-
-<div style="overflow:auto;">
-  <div style="float:right;">
-    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-  </div>
-</div>
-
-<div style="text-align:center;margin-top:40px;">
-  <span class="step"></span>
-  <span class="step"></span>
-  <span class="step"></span>
-  <span class="step"></span>
-</div>
-  {% if result != -1 %}
-    <h1>{{result}}</h1>
-  {% endif %}
-
-  {% block script_link %}
-  <script src="{% static 'WineAnalyzer/js/script.js' %}"></script>
-  {% endblock %}
-
-  <span class="fa fa-star" style="color: orange"></span>
-  <span class="fa fa-star" style="color: orange"></span>
-  <span class="fa fa-star" style="color: orange"></span>
-  <span class="fa fa-star" style="color: orange"></span>
-  <span class="fa fa-star"></span>
-
+<form class="elements-form" action="{% url 'analyzer' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Add</button>
 </form>
+
+{% if result >= 0 %}
+  {% for i in stars %}
+      <span class="fa fa-star" {% if i <= result %} style="color: orange"  {% endif %}></span>
+  {% endfor %}
+{% endif %}
+
 {% endblock %}
