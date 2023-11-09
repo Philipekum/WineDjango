@@ -9,10 +9,11 @@
 {% endblock %}
 
 {% block content %}
+
 <a class="home-text">
     Step into the exciting world of wine analysis, breaking down your favourite drink into its fundamental elements.
 </a>
-<a class="start-button" href="/analyzer">Start analyzing</a>
-<a class="learn-button" href="/about">Learn more</a>
+<a class="start-button" href="{% url 'analyzer' %}">Start analyzing</a>
+<a class="learn-button" href="{% url 'about' %}">Learn more</a>
 
 {% endblock %}
