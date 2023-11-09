@@ -15,12 +15,12 @@
 <form class="elements-form" action="{% url 'analyzer' %}" method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Add</button>
+  <button type="submit">Check</button>
 </form>
 
 {% if result >= 0 %}
   {% for i in stars %}
-      <span class="fa fa-star" {% if i <= result %} style="color: orange"  {% endif %}></span>
+      <span class="fa fa-star fa-lg" {% if i <= result %} style="color: orange"  {% endif %}></span>
   {% endfor %}
 {% endif %}
 

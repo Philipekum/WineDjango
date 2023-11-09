@@ -6,11 +6,16 @@ body {
     margin: 0;
     min-height: 100%;
     min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
 }
 
 main {
     flex: 1;
-    width: 50%;
+    width: 100%;
     font-size: 20px;
 }
 
@@ -18,22 +23,32 @@ main {
   overflow: hidden;
   background-color: #883225;
   padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .header a {
-  float: left;
+  float: right;
   color: white;
   text-align: center;
+  font-family: 'Helvetica Neue';
   padding: 12px;
   text-decoration: none;
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
 }
 
 .header a.logo {
+  float: left;
   font-size: 25px;
   font-weight: bold;
+  font-family: 'Helvetica Neue';
 }
 
 .header-right {
@@ -45,28 +60,76 @@ footer {
   width: 100%;
   background: #883225;
   padding: 20px 10px;
+  color: white;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-width: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+
+
+
 }
 
 .start-button {
-    background: #883225;
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    text-decoration: none;
+    color: #883225;
+    font-size: 27px;
+    padding: 10px 20px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    border-color: #883225;
+    background-color: white;
+    display: inline-block; /* делаем кнопку блочным элементом */
+}
+
+.start-button:hover {
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    background-color: #883225;
+    text-decoration: none;
     color: white;
     font-size 27px;
     padding: 10px 20px;
     border: none
     border-radius: 10px;
+
 }
 
 .learn-button {
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    text-decoration: none;
     color: #883225;
     font-size: 27px;
-    padding: 10px 20 px;
+    padding: 10px 20px;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    border-color: #883225;
+    background-color: white;
+    display: inline-block; /* делаем кнопку блочным элементом */
+
+}
+
+.learn-button:hover {
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    background-color: #883225;
+    text-decoration: none;
+    color: white;
+    font-size 27px;
+    padding: 10px 20px;
+    border: none
     border-radius: 10px;
 }
 
@@ -78,4 +141,56 @@ footer {
      letter-spacing: -1px;
      line-height: 1;
      text-align: center;
+     display: inline-block; /* делаем кнопку блочным элементом */
+     margin-top: 60px;
+     margin-bottom: 30px;
 }
+
+h1 {
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    color: #883225;
+    text-decoration: none;
+}
+
+h2 {
+    font-family: 'Helvetica Neue';
+    font-weight: bold;
+    color: #883225;
+    text-decoration: none;
+}
+
+p {
+font-family: 'Helvetica Neue';
+
+    color: black;
+    text-decoration: none;
+}
+
+.fa {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+button{
+font-family: 'Helvetica Neue';
+    font-weight: bold;
+    text-decoration: none;
+    color: #883225;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #883225;
+    background-color: white;
+    display: inline-block; /* делаем кнопку блочным элементом */
+}
+
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
