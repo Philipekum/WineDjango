@@ -18,13 +18,11 @@ def analyzer(request):
     if request.method == 'POST':
         response = request.POST
 
-        form = ElementsInput(response)
-
         random_change = random.randint(-2, 2)
 
         result = combine_to_df_and_predict(response)[0] + random_change
 
-
+        form = ElementsInput()
 
     else:
         form = ElementsInput()
