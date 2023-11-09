@@ -1,10 +1,14 @@
 from django.shortcuts import render
-
-menu = ["О сайте", "Добавить статью", "Обратная связь"]
+from .models import *
 
 
 def home(request):
     return render(request, 'WineAnalyzer/home.html')
+
+
+def about(request):
+    articles = Articles.objects.all()
+    return render(request, 'WineAnalyzer/about.html', {'articles': articles})
 
 
 def analyzer(request):
@@ -28,8 +32,8 @@ def analyzer(request):
         result = -1
 
     return render(request, 'WineAnalyzer/analyzer.html',
-                  {'acids':           ['fixed acidity', 'volatile acidity', 'citric acid'],
+                  {'acids': ['fixed acidity', 'volatile acidity', 'citric acid'],
                    'sugar_chlorides': ['residual sugar', 'chlorides'],
                    'sulfur_dioxides': ['free sulfur dioxide', 'total sulfur dioxide'],
-                   'others':          ['density', 'pH', 'sulphates', 'alcohol'],
-                   'result':          result})
+                   'others': ['density', 'pH', 'sulphates', 'alcohol'],
+                   'result': result})
